@@ -1,9 +1,11 @@
 export CLICOLOR=1
-export COURSE=~/Dropbox/UT/Courses/13Fall
+export COURSE=~/Dropbox/UT/Courses/14Spring
+export RESEARCH=~/Dropbox/UT/Research
 export WORK=~/Workspace
 alias cdw='cd $WORK'
 alias cdh='cd ~'
 alias cdc='cd $COURSE'
+alias cdr='cd $RESEARCH'
 alias la='ls -a'
 alias tag='ctags -R --extra=f .'
 alias tagcpp='ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .'
