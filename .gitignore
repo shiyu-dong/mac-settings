@@ -13,6 +13,7 @@
 .rnd
 .ssh/
 .subversion/
+.Trash/
 .viminfo
 .netrwhist
 Desktop/

@@ -70,6 +70,7 @@ filetype indent on
 set list listchars=tab:\ \ ,trail:·
 
 " set nowrap       "Don't wrap lines
+set textwidth=80
 set linebreak    "Wrap lines at convenient points
 
 " ================ Folds ============================
@@ -124,7 +125,7 @@ syntax enable
 if has('gui_running')
   colorscheme solarized
   set guifont=Menlo:h14
-  set lines=36 columns=120
+  set lines=72 columns=240
   set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 else
   colorscheme solarized
