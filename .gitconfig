@@ -27,3 +27,4 @@
 	default = matching
 [core]
 	excludesfile = /Users/Shiyu/.gitignore-global
+	editor = vim
