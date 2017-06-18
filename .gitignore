@@ -27,8 +27,8 @@
 .rnd
 .ssh/
 .subversion/
-.vim
 .viminfo
+.vim/bundle/
 
 ## Normal files and folders
 Applications/
