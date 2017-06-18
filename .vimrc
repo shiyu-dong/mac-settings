@@ -1,6 +1,36 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
-set nocompatible
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'kien/ctrlp.vim'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" set encoding
+set encoding=utf-8
 
 " use jj to enter normal mode
 :imap jj <Esc>
@@ -40,6 +70,8 @@ set hidden
 set incsearch        "Find the next match as we type the search
 set hlsearch         "Hilight searches by default
 set viminfo='100,f1  "Save up to 100 marks, enable capital marks
+set ignorecase       "Ignore case
+set smartcase        "Use smartcase
 
 " ================ Turn Off Swap Files ==============
 
@@ -58,9 +90,9 @@ silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
 
 filetype plugin on
@@ -69,32 +101,21 @@ filetype indent on
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
-" set nowrap       "Don't wrap lines
-set textwidth=80
+set nowrap       "Don't wrap lines
+set textwidth=0
 set linebreak    "Wrap lines at convenient points
 
 " ================ Folds ============================
 
 set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
+"set foldnestmax=3       "deepest fold is 3 levels
+set foldlevel=99
+"set nofoldenable        "dont fold by default
 
-" ================ Completion =======================
+" Enable folding with the spacebar
+nnoremap <space> za
 
-set wildmode=list:longest
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
-set wildignore+=*DS_Store*
-set wildignore+=vendor/rails/**
-set wildignore+=vendor/cache/**
-set wildignore+=*.gem
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=*.png,*.jpg,*.gif
-set omnifunc=syntaxcomplete#Complete
-
+let g:SimpylFold_docstring_preview=1
 
 " ================ Scrolling =========================
 
@@ -110,18 +131,12 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
-" ================ ctags =============================
-
-set tags=./tags;/
-" configure tags - add additional tags here or comment out not-used ones
-set tags+=~/.vim/tags/cpp
-" build tags of your own project with Ctrl-F12
-map <C-\> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+" syntax
+let python_highlight_all=1
+syntax on
 
 " ================ color scheme ======================
-
-syntax enable
-  set background=dark
+set background=dark
 if has('gui_running')
   colorscheme solarized
   set guifont=Menlo:h14
@@ -131,17 +146,60 @@ else
   colorscheme solarized
   set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 endif
+call togglebg#map("<F5>")
 
-" ================ OmniCppComplete ===================
+" Python indention
+au BufNewFile,BufRead *.py
+    \set tabstop=4
+    \set softtabstop=4
+    \set shiftwidth=4
+    \set textwidth=79
+    \set expandtab
+    \set autoindent
+    \set fileformat=unix
 
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-" automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
+" Javascript indention
+au BufNewFile,BufRead *.js
+    \set tabstop=2
+    \set softtabstop=2
+    \set shiftwidth=2
+
+
+" Auto complete
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+
+nmap <C-\>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <C-\>s :YcmCompleter GoTo<CR>
+nmap <C-\>c :YcmCompleter GoToReferences<CR>
+nmap <C-\>f :YcmCompleter GoToInclude<CR>
+nmap <C-\>i :YcmCompleter GoToImprecise<CR>
+nmap <C-\>d :YcmCompleter GoToDefinition<CR>
+nmap <C-\>r :YcmCompleter GoToDeclaration<CR>
+nmap <C-t> <C-o>
+
+" python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+" Hide .pyc file
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+" System clipboard
+set clipboard=unnamed
+
+" =============== Remove Tailing Space ===============
+:command RTS %s/\s\+$//e
+
+" =============== Remove Empty Line ==================
+:command REL %s/\n\{3,}/\r\r/e
+:set ff=unix
+
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py' 

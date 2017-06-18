@@ -40,7 +40,11 @@ Thumbs.db
 ######################
 tags
 
-# eclipse generated files #
+# WebStorm generated files #
+######################
+.idea
+
+# Eclipse generated files #
 ######################
 .classpath
 .project
@@ -56,7 +60,7 @@ tags
 # ctags generated files #
 ######################
 tags
-cscspe.*
+cscope.*
 
 # C #
 ######################
@@ -108,7 +112,17 @@ cscspe.*
 *.a
 *.lib
 
-# Executables
+# Executables #
+######################
 *.exe
 *.out
 *.app
+
+# Python #
+######################
+*.pyc
+
+# XCode #
+######################
+*.xcbkptlist
+xcuserdata
