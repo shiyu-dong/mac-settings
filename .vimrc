@@ -164,20 +164,6 @@ au BufNewFile,BufRead *.js
     \set softtabstop=2
     \set shiftwidth=2
 
-
-" Auto complete
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-
-nmap <C-\>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nmap <C-\>s :YcmCompleter GoTo<CR>
-nmap <C-\>c :YcmCompleter GoToReferences<CR>
-nmap <C-\>f :YcmCompleter GoToInclude<CR>
-nmap <C-\>i :YcmCompleter GoToImprecise<CR>
-nmap <C-\>d :YcmCompleter GoToDefinition<CR>
-nmap <C-\>r :YcmCompleter GoToDeclaration<CR>
-nmap <C-t> <C-o>
-
 " python with virtualenv support
 py << EOF
 import os
@@ -202,6 +188,15 @@ set clipboard=unnamed
 :set ff=unix
 
 " YouCompleteMe
+nmap <C-\>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <C-\>s :YcmCompleter GoTo<CR>
+nmap <C-\>c :YcmCompleter GoToReferences<CR>
+nmap <C-\>f :YcmCompleter GoToInclude<CR>
+nmap <C-\>i :YcmCompleter GoToImprecise<CR>
+nmap <C-\>d :YcmCompleter GoToDefinition<CR>
+nmap <C-\>r :YcmCompleter GoToDeclaration<CR>
+nmap <C-t> <C-o>
+let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py' 
 
 " NERDTree shortcut
