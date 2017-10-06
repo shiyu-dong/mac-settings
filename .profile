@@ -1,7 +1,9 @@
 export CLICOLOR=1
 export WORK=$HOME/Dropbox/Workspace/
 export WORK2=$HOME/Workspace
+export WORK3=$HOME/Uber
 export EDITOR=vim
+alias vi='vim'
 alias la='ls -a'
 alias tag='ctags -R --extra=f .'
 alias tagcpp='ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .'
@@ -17,8 +19,10 @@ alias rts='find -type f \( -iname \*.c -o -iname \*.cpp -o -iname \*.h \) -print
 cdw() {
     if [ -d "$WORK" ]; then
         cd "$WORK"
-    else
+    elif [ -d "$WORK2" ]; then
         cd "$WORK2"
+    else
+        cd "$WORK3"
     fi
 }
 
@@ -33,5 +37,4 @@ PS2="Continue> "
 
 # Setting PATH
 PATH=${PATH}:"/usr/local/octave/3.8.0/bin"
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
