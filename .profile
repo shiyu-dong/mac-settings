@@ -3,6 +3,7 @@ export WORK=$HOME/Dropbox/Workspace/
 export WORK2=$HOME/Workspace
 export WORK3=$HOME/Uber
 export EDITOR=vim
+export JAVA_HOME=$(/usr/libexec/java_home)
 alias vi='vim'
 alias la='ls -a'
 alias tag='ctags -R --extra=f .'
@@ -36,5 +37,5 @@ PS1='\[\e[36m\]\u\[\e[0m\]@\[\e[35m\]\h\[\e[0m\]:\[\e[34m\]\w\[\e[0m\]$(__git_ps
 PS2="Continue> "
 
 # Setting PATH
-PATH=${PATH}:"/usr/local/octave/3.8.0/bin"
+PATH="/usr/local/opt/python/libexec/bin:/usr/local/sbin:${PATH}:/usr/local/octave/3.8.0/bin"
 export PATH
