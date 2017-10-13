@@ -3,6 +3,7 @@
 .Trash/
 .Xauthority
 .arcrc
+.atom/
 .bash_history
 .bash_sessions/
 .boxer/
