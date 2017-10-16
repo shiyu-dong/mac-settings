@@ -9,6 +9,7 @@
 .boxer/
 .bundle/
 .cache/
+.cerberus/
 .config/
 .cocoapods/
 .cups/
@@ -21,6 +22,7 @@
 .glide/
 .gradle/
 .graphlab/
+.idl/
 .idlrc
 .idlerc/
 .ipython/
