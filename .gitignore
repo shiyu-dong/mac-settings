@@ -2,6 +2,7 @@
 .CFUserTextEncoding
 .Trash/
 .Xauthority
+.android/
 .arcrc
 .atom/
 .bash_history
@@ -37,17 +38,18 @@
 .npm/
 .npmrc
 .nvm/
-.pip/pip.conf
-.profile_corp
-.profile_go
-.profile_vs
 .octave_hist
 .octaverc
 .oracle_jre_usage/
+.pip/pip.conf
 .powerupdate.user.properties
+.profile_corp
+.profile_go
+.profile_vs
 .python_history
 .rbenv/
 .rnd
+.seer
 .ssh/
 .ssh/id_dsa
 .ssh/id_ecdsa
@@ -62,6 +64,7 @@
 .vscode/
 
 ## Normal files and folders
+Android/
 Applications/
 Desktop/
 Documents/
