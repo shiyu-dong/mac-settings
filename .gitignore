@@ -21,6 +21,7 @@
 .gem
 .gitignore_uber
 .glide/
+.glide-uber/
 .gradle/
 .graphlab/
 .idl/

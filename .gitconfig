@@ -49,3 +49,24 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[alias]
+  a   = add
+  adu = add -u
+  br  = branch
+  ci  = commit
+  co  = checkout
+  cii = commit -m "i"
+  cia = commit --amend
+  cp  = cherry-pick
+  di  = diff --full-index
+  din = diff --name-status
+  rb  = rebase
+  rbc = rebase --continue
+  rbi = rebase -i
+  rbi2= rebase -i HEAD~2
+  mg  = merge
+  sh  = show
+  shn = show --name-status
+  st  = status
+  l   = log --graph --all
+  h   = log --graph --oneline --all --decorate
