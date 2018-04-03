@@ -57,12 +57,14 @@
 .ssh/id_ed25519
 .ssh/id_rsa
 .subversion/
+.tooling/
 .uber/
 .ucontainer-secrets
 .vagrant.d/
 .viminfo
 .vim/bundle/
 .vscode/
+.wget-hsts
 
 ## Normal files and folders
 Android/

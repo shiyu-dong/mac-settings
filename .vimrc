@@ -188,13 +188,16 @@ set clipboard=unnamed
 :set ff=unix
 
 " YouCompleteMe
-nmap <C-\>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nmap <C-\>s :YcmCompleter GoTo<CR>
-nmap <C-\>c :YcmCompleter GoToReferences<CR>
 nmap <C-\>f :YcmCompleter GoToInclude<CR>
-nmap <C-\>i :YcmCompleter GoToImprecise<CR>
-nmap <C-\>d :YcmCompleter GoToDefinition<CR>
-nmap <C-\>r :YcmCompleter GoToDeclaration<CR>
+nmap <C-\>d :YcmCompleter GoToDeclaration<CR>
+nmap <C-\>i :YcmCompleter GoToDefinition<CR>
+nmap <C-\>g :YcmCompleter GoTo<CR>
+nmap <C-\>v :YcmCompleter GoToImprecise<CR>
+nmap <C-\>c :YcmCompleter GoToReferences<CR>
+nmap <C-\>i :YcmCompleter GoToImplementation<CR>
+nmap <C-\>r :YcmCompleter GoToImplementationElseDeclaration<CR>
+" nmap <C-\>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 nmap <C-t> <C-o>
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py' 
