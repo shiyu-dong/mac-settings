@@ -10,6 +10,7 @@
 .boxer/
 .bundle/
 .cache/
+.cassandra/
 .cerberus/
 .config/
 .cocoapods/
