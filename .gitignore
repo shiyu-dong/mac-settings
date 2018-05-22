@@ -43,6 +43,7 @@
 .octave_hist
 .octaverc
 .oracle_jre_usage/
+.pex/
 .pip/pip.conf
 .powerupdate.user.properties
 .profile_corp
