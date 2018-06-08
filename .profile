@@ -27,6 +27,10 @@ cdw() {
     fi
 }
 
+bucd() {
+    ./gradlew clean :ucd:ucd-monitor:build :ucd:ucd-server:build :ucd:ucd-cadence:build
+}
+
 # Git completion
 source ~/.git-completion.bash
 source ~/.git-prompt.sh

@@ -165,7 +165,7 @@ au BufNewFile,BufRead *.js
     \set shiftwidth=2
 
 " python with virtualenv support
-py << EOF
+py3 << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
