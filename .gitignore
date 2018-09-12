@@ -15,6 +15,7 @@
 .config/
 .cocoapods/
 .cups/
+.devxp/
 .docker/
 .dropbox-master/
 .dropbox/

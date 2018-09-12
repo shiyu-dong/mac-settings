@@ -28,7 +28,23 @@ cdw() {
 }
 
 bucd() {
-    ./gradlew clean :ucd:ucd-monitor:build :ucd:ucd-server:build :ucd:ucd-cadence:build
+    ./gradlew :ucd:ucd-common:build :ucd:ucd-monitor:build :ucd:ucd-server:build :ucd:ucd-cadence:build
+}
+
+cucd() {
+    ./gradlew :ucd:ucd-common:check :ucd:ucd-monitor:check :ucd:ucd-server:check :ucd:ucd-cadence:check
+}
+
+cbucd() {
+    ./gradlew clean :ucd:ucd-common:build :ucd:ucd-monitor:build :ucd:ucd-server:build :ucd:ucd-cadence:build
+}
+
+ccucd() {
+    ./gradlew clean :ucd:ucd-common:check :ucd:ucd-monitor:check :ucd:ucd-server:check :ucd:ucd-cadence:check
+}
+
+jfucd() {
+    ./gradlew :ucd:ucd-common:goJF :ucd:ucd-monitor:goJF ucd:ucd:server:goJF ucd:ucd-cadence:goJF
 }
 
 # Git completion
