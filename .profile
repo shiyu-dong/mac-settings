@@ -28,23 +28,35 @@ cdw() {
 }
 
 bucd() {
-    ./gradlew :ucd:ucd-common:build :ucd:ucd-monitor:build :ucd:ucd-server:build :ucd:ucd-cadence:build
+    ./gradlew ucd:ucd-common:build ucd:ucd-monitor:build ucd:ucd-server:build ucd:ucd-cadence:build
 }
 
 cucd() {
-    ./gradlew :ucd:ucd-common:check :ucd:ucd-monitor:check :ucd:ucd-server:check :ucd:ucd-cadence:check
+    ./gradlew ucd:ucd-common:check ucd:ucd-monitor:check ucd:ucd-server:check ucd:ucd-cadence:check
 }
 
 cbucd() {
-    ./gradlew clean :ucd:ucd-common:build :ucd:ucd-monitor:build :ucd:ucd-server:build :ucd:ucd-cadence:build
+    ./gradlew clean ucd:ucd-common:build ucd:ucd-monitor:build ucd:ucd-server:build ucd:ucd-cadence:build
 }
 
 ccucd() {
-    ./gradlew clean :ucd:ucd-common:check :ucd:ucd-monitor:check :ucd:ucd-server:check :ucd:ucd-cadence:check
+    ./gradlew clean ucd:ucd-common:check ucd:ucd-monitor:check ucd:ucd-server:check ucd:ucd-cadence:check
 }
 
 jfucd() {
-    ./gradlew :ucd:ucd-common:goJF :ucd:ucd-monitor:goJF ucd:ucd:server:goJF ucd:ucd-cadence:goJF
+    ./gradlew ucd:ucd-common:goJF ucd:ucd-monitor:goJF ucd:ucd-server:goJF ucd:ucd-cadence:goJF
+}
+
+tunnel() {
+    ssh \
+    -nNT -L 14834:localhost:14834 \
+    -nNT -L 18366:localhost:18366 \
+    -nNT -L 14765:localhost:14765 \
+    -nNT -L 16802:localhost:16802 \
+    -nNT -L 14542:localhost:14542 \
+    -nNT -L 16439:localhost:16439 \
+    -nNT -L 5436:localhost:5436 \
+    compute2000-sjc1
 }
 
 # Git completion
