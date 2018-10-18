@@ -55,6 +55,7 @@ tunnel() {
     -nNT -L 16802:localhost:16802 \
     -nNT -L 14542:localhost:14542 \
     -nNT -L 16439:localhost:16439 \
+    -nNT -L 14384:localhost:14384 \
     -nNT -L 5436:localhost:5436 \
     compute2000-sjc1
 }

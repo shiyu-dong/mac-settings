@@ -16,6 +16,7 @@
 .cocoapods/
 .cups/
 .devxp/
+.dep-cache/
 .docker/
 .dropbox-master/
 .dropbox/
@@ -80,6 +81,7 @@ Google Drive/
 Library/
 Movies/
 Music/
+Personal/
 Pictures/
 Public/
 Workspace/
