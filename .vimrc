@@ -16,7 +16,7 @@ Plugin 'gmarik/Vundle.vim'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'altercation/vim-colors-solarized'
@@ -165,7 +165,8 @@ au BufNewFile,BufRead *.js
     \set shiftwidth=2
 
 " python with virtualenv support
-py3 << EOF
+if has('python')
+py << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
@@ -173,6 +174,7 @@ if 'VIRTUAL_ENV' in os.environ:
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
   execfile(activate_this, dict(__file__=activate_this))
 EOF
+endif
 
 " Hide .pyc file
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree

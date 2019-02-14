@@ -49,14 +49,34 @@ jfucd() {
 
 tunnel() {
     ssh \
-    -nNT -L 14834:localhost:14834 \
-    -nNT -L 18366:localhost:18366 \
-    -nNT -L 14765:localhost:14765 \
-    -nNT -L 16802:localhost:16802 \
-    -nNT -L 14542:localhost:14542 \
-    -nNT -L 16439:localhost:16439 \
-    -nNT -L 14384:localhost:14384 \
-    -nNT -L 5436:localhost:5436 \
+    -nNT -L 14834:127.0.0.1:14834 \
+    -nNT -L 18366:127.0.0.1:18366 \
+    -nNT -L 14765:127.0.0.1:14765 \
+    -nNT -L 16802:127.0.0.1:16802 \
+    -nNT -L 14542:127.0.0.1:14542 \
+    -nNT -L 16439:127.0.0.1:16439 \
+    -nNT -L 14384:127.0.0.1:14384 \
+    -nNT -L 5436:127.0.0.1:5436 \
+    -nNT -L 5437:127.0.0.1:5437 \
+    compute2000-sjc1
+}
+
+tunnelserver() {
+    ssh \
+    -vL 16257:127.0.0.1:16257 \
+    -vL 14834:127.0.0.1:14834 \
+    -vL 18366:127.0.0.1:18366 \
+    -vL 14300:127.0.0.1:14300 \
+    -vL 16746:127.0.0.1:16746 \
+    -vL 16498:127.0.0.1:16498 \
+    -vL 14766:127.0.0.1:14766 \
+    -vL 14765:127.0.0.1:14765 \
+    -vL 14542:127.0.0.1:14542 \
+    -vL 16521:127.0.0.1:16521 \
+    -vL 16802:127.0.0.1:16802 \
+    -vL 5436:127.0.0.1:5436 \
+    -vL 5437:127.0.0.1:5437 \
+    -vL 14384:127.0.0.1:14384 \
     compute2000-sjc1
 }
 
@@ -69,6 +89,5 @@ myName=`/usr/libexec/PlistBuddy -c "Print :System:System:ComputerName" /Library/
 PS1='\[\e[36m\]\u\[\e[0m\]@\[\e[35m\]\h\[\e[0m\]:\[\e[34m\]\w\[\e[0m\]$(__git_ps1 "[\[\e[33m\]%s\[\e[0m\]]")`if [ \$? = 0 ]; then echo $; else echo \[\e[31m\]%\[\e[0m\];fi;` '
 PS2="Continue> "
 
-# Setting PATH
-PATH="/usr/local/opt/python/libexec/bin:/usr/local/sbin:${PATH}:/usr/local/octave/3.8.0/bin"
-export PATH
+# enable this if default to python3
+# export PATH=/usr/local/opt/python/libexec/bin:$PATH

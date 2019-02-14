@@ -12,6 +12,7 @@
 .cache/
 .cassandra/
 .cerberus/
+.chef/
 .config/
 .cocoapods/
 .cups/

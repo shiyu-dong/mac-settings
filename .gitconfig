@@ -11,6 +11,8 @@
 	insteadOf = https://code.uber.internal/
 [url "ssh://config.uber.internal/"]
 	insteadOf = https://config.uber.internal/
+[url "ssh://git@github.com/uber/"]
+	insteadOf = https://github.com/uber/
 [http "https://gopkg.uberinternal.com"]
 	followRedirects = true
 [http "https://gopkg.in"]
