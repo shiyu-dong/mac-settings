@@ -4,6 +4,7 @@ export WORK2=$HOME/Workspace
 export WORK3=$HOME/Uber
 export EDITOR=vim
 export JAVA_HOME=$(/usr/libexec/java_home)
+export GOPATH=$GOPATH:$HOME/go-code
 alias vi='vim'
 alias la='ls -a'
 alias tag='ctags -R --extra=f .'
@@ -43,6 +44,14 @@ ccucd() {
     ./gradlew clean ucd:ucd-common:check ucd:ucd-monitor:check ucd:ucd-server:check ucd:ucd-cadence:check
 }
 
+cpucd() {
+    ./gradlew ucd:ucd-common:compileJava ucd:ucd-monitor:compileJava ucd:ucd-server:compileJava ucd:ucd-cadence:compileJava ucd:ucd-common:compileTestJava ucd:ucd-monitor:compileTestJava ucd:ucd-server:compileTestJava ucd:ucd-cadence:compileTestJava
+}
+
+ccpucd() {
+    ./gradlew clean ucd:ucd-common:compileJava ucd:ucd-monitor:compileJava ucd:ucd-server:compileJava ucd:ucd-cadence:compileJava ucd:ucd-common:compileTestJava ucd:ucd-monitor:compileTestJava ucd:ucd-server:compileTestJava ucd:ucd-cadence:compileTestJava
+}
+
 jfucd() {
     ./gradlew ucd:ucd-common:goJF ucd:ucd-monitor:goJF ucd:ucd-server:goJF ucd:ucd-cadence:goJF
 }
@@ -58,7 +67,7 @@ tunnel() {
     -nNT -L 14384:127.0.0.1:14384 \
     -nNT -L 5436:127.0.0.1:5436 \
     -nNT -L 5437:127.0.0.1:5437 \
-    compute2000-sjc1
+    compute2000-dca1
 }
 
 tunnelserver() {
@@ -77,7 +86,7 @@ tunnelserver() {
     -vL 5436:127.0.0.1:5436 \
     -vL 5437:127.0.0.1:5437 \
     -vL 14384:127.0.0.1:14384 \
-    compute2000-sjc1
+    compute2000-dca1
 }
 
 # Git completion
@@ -89,6 +98,10 @@ myName=`/usr/libexec/PlistBuddy -c "Print :System:System:ComputerName" /Library/
 PS1='\[\e[36m\]\u\[\e[0m\]@\[\e[35m\]\h\[\e[0m\]:\[\e[34m\]\w\[\e[0m\]$(__git_ps1 "[\[\e[33m\]%s\[\e[0m\]]")`if [ \$? = 0 ]; then echo $; else echo \[\e[31m\]%\[\e[0m\];fi;` '
 PS2="Continue> "
 
+# buck completion
+source ~/go-code/tooling/buck-completion/buck-completion.bash
+
 export PATH=/usr/local/sbin:$PATH
+export PATH=$PATH:$GOPATH/bin
 # enable this if default to python3
 # export PATH=/usr/local/opt/python/libexec/bin:$PATH

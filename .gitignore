@@ -5,9 +5,12 @@
 .android/
 .arcrc
 .atom/
+.aw/
+.bashrc
 .bash_history
 .bash_sessions/
 .boxer/
+.buckw/
 .bundle/
 .cache/
 .cassandra/
@@ -51,6 +54,7 @@
 .powerupdate.user.properties
 .profile_corp
 .profile_go
+.profile_lda
 .profile_vs
 .python_history
 .rbenv/
@@ -70,6 +74,7 @@
 .vim/bundle/
 .vscode/
 .wget-hsts
+.zshenv
 
 ## Normal files and folders
 Android/
@@ -88,4 +93,4 @@ Public/
 Workspace/
 Uber/
 bin/
-gocode/
+go-code/
