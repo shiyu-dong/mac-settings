@@ -65,9 +65,10 @@ tunnel() {
     -nNT -L 14542:127.0.0.1:14542 \
     -nNT -L 16439:127.0.0.1:16439 \
     -nNT -L 14384:127.0.0.1:14384 \
+    -nNT -L 5435:127.0.0.1:5435 \
     -nNT -L 5436:127.0.0.1:5436 \
     -nNT -L 5437:127.0.0.1:5437 \
-    compute2000-dca1
+    compute3000-dca1
 }
 
 tunnelserver() {
@@ -86,7 +87,7 @@ tunnelserver() {
     -vL 5436:127.0.0.1:5436 \
     -vL 5437:127.0.0.1:5437 \
     -vL 14384:127.0.0.1:14384 \
-    compute2000-dca1
+    compute3000-dca1
 }
 
 # Git completion
@@ -98,10 +99,16 @@ myName=`/usr/libexec/PlistBuddy -c "Print :System:System:ComputerName" /Library/
 PS1='\[\e[36m\]\u\[\e[0m\]@\[\e[35m\]\h\[\e[0m\]:\[\e[34m\]\w\[\e[0m\]$(__git_ps1 "[\[\e[33m\]%s\[\e[0m\]]")`if [ \$? = 0 ]; then echo $; else echo \[\e[31m\]%\[\e[0m\];fi;` '
 PS2="Continue> "
 
-# buck completion
-source ~/go-code/tooling/buck-completion/buck-completion.bash
+## buck completion for go-monorepo
+# source ~/go-code/tooling/buck-completion/buck-completion.bash
 
 export PATH=/usr/local/sbin:$PATH
 export PATH=$PATH:$GOPATH/bin
 # enable this if default to python3
 # export PATH=/usr/local/opt/python/libexec/bin:$PATH
+
+brew analytics off 2>&1 >/dev/null
+export PATH="/usr/local/opt/thrift@0.9/bin:$PATH"
+
+## buck completion for java-monorepo
+# source /Users/shiyu/.gradle/.gradle/caches/okbuck/buck-completion.bash
