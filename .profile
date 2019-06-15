@@ -28,6 +28,10 @@ cdw() {
     fi
 }
 
+backup_photos() {
+    rsync -av --delete /Volumes/NTFS/Photos /Volumes/Photos
+}
+
 bucd() {
     ./gradlew ucd:ucd-common:build ucd:ucd-monitor:build ucd:ucd-server:build ucd:ucd-cadence:build
 }
