@@ -38,6 +38,7 @@
 .ipython/
 .jpf/
 .jupyter/
+.keras/
 .lesshst
 .m2/
 .macports/
@@ -95,3 +96,4 @@ Workspace/
 Uber/
 bin/
 go-code/
+learning/
