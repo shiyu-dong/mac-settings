@@ -44,6 +44,7 @@
 [core]
 	excludesfile = /Users/Shiyu/.gitignore-global
 	editor = vim
+	untrackedCache = true
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
@@ -70,3 +71,5 @@
   st  = status
   l   = log --graph --all
   h   = log --graph --oneline --all --decorate
+[credential "https://git.uberinternal.com"]
+	helper = usso

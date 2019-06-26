@@ -3,7 +3,6 @@ export WORK=$HOME/Dropbox/Workspace/
 export WORK2=$HOME/Workspace
 export WORK3=$HOME/Uber
 export EDITOR=vim
-export JAVA_HOME=$(/usr/libexec/java_home)
 export GOPATH=$GOPATH:$HOME/go-code
 alias vi='vim'
 alias la='ls -a'
@@ -15,6 +14,10 @@ alias b2='cd ../..'
 alias b3='cd ../../..'
 alias b4='cd ../../../..'
 alias b5='cd ../../../../..'
+alias cducd='cd ~/Uber/fievel/dev-platform/cicd/ucd'
+alias ucd_buck='./buckw project dev-platform/cicd/ucd/...'
+alias ucd_test='./buckw test --exclude integration --always-exclude dev-platform/cicd/ucd/...'
+
 alias chnex='find -type f \( -iname \*.c -o -iname \*.cpp -o -iname \*.h \) -exec chmod -x \{\} \;'
 alias rts='find -type f \( -iname \*.c -o -iname \*.cpp -o -iname \*.h \) -print0 | xargs -0 sed -i '' -E "s/[[:space:]]*$//" '
 
@@ -32,34 +35,6 @@ backup_photos() {
     rsync -av --delete /Volumes/NTFS/Photos /Volumes/Photos
 }
 
-bucd() {
-    ./gradlew ucd:ucd-common:build ucd:ucd-monitor:build ucd:ucd-server:build ucd:ucd-cadence:build
-}
-
-cucd() {
-    ./gradlew ucd:ucd-common:check ucd:ucd-monitor:check ucd:ucd-server:check ucd:ucd-cadence:check
-}
-
-cbucd() {
-    ./gradlew clean ucd:ucd-common:build ucd:ucd-monitor:build ucd:ucd-server:build ucd:ucd-cadence:build
-}
-
-ccucd() {
-    ./gradlew clean ucd:ucd-common:check ucd:ucd-monitor:check ucd:ucd-server:check ucd:ucd-cadence:check
-}
-
-cpucd() {
-    ./gradlew ucd:ucd-common:compileJava ucd:ucd-monitor:compileJava ucd:ucd-server:compileJava ucd:ucd-cadence:compileJava ucd:ucd-common:compileTestJava ucd:ucd-monitor:compileTestJava ucd:ucd-server:compileTestJava ucd:ucd-cadence:compileTestJava
-}
-
-ccpucd() {
-    ./gradlew clean ucd:ucd-common:compileJava ucd:ucd-monitor:compileJava ucd:ucd-server:compileJava ucd:ucd-cadence:compileJava ucd:ucd-common:compileTestJava ucd:ucd-monitor:compileTestJava ucd:ucd-server:compileTestJava ucd:ucd-cadence:compileTestJava
-}
-
-jfucd() {
-    ./gradlew ucd:ucd-common:goJF ucd:ucd-monitor:goJF ucd:ucd-server:goJF ucd:ucd-cadence:goJF
-}
-
 tunnel() {
     ssh \
     -nNT -L 14834:127.0.0.1:14834 \
@@ -72,7 +47,10 @@ tunnel() {
     -nNT -L 5436:127.0.0.1:5436 \
     -nNT -L 5437:127.0.0.1:5437 \
     -nNT -L 14766:127.0.0.1:14766 \
-    compute3000-dca1
+    -nNT -L 14004:127.0.0.1:14004 \
+    -nNT -L 16493:127.0.0.1:16493 \
+    -nNT -L 16802:127.0.0.1:16802 \
+    agent339-phx2
 }
 
 tunnelserver() {
@@ -90,7 +68,7 @@ tunnelserver() {
     -vL 5436:127.0.0.1:5436 \
     -vL 5437:127.0.0.1:5437 \
     -vL 14384:127.0.0.1:14384 \
-    compute3000-dca1
+    agent5713-phx2
 }
 
 # Git completion
@@ -114,4 +92,6 @@ brew analytics off 2>&1 >/dev/null
 export PATH="/usr/local/opt/thrift@0.9/bin:$PATH"
 
 ## buck completion for java-monorepo
-# source /Users/shiyu/.gradle/.gradle/caches/okbuck/buck-completion.bash
+# /usr/libexec/java_home -v 1.8
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+source /Users/shiyu/.gradle/.gradle/caches/okbuck/buck-completion.bash
