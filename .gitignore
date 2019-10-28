@@ -35,6 +35,8 @@
 .idl.git/
 .idlrc
 .idlerc/
+.iterm2/
+.iterm2_shell_integration.bash
 .ipython/
 .jpf/
 .jupyter/
@@ -58,6 +60,7 @@
 .profile_go
 .profile_lda
 .profile_vs
+.pylint.d/
 .python_history
 .rbenv/
 .rnd

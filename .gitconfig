@@ -73,3 +73,5 @@
   h   = log --graph --oneline --all --decorate
 [credential "https://git.uberinternal.com"]
 	helper = usso
+[credential "https://vfs4g-cache.uberinternal.com"]
+	helper = usso
