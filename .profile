@@ -25,7 +25,9 @@ cdw() {
 }
 
 backup_photos() {
-    rsync -av --delete /Volumes/NTFS/Photos /Volumes/Photos
+    rsync -av --delete ~/Pictures/Photos /Volumes/Photos
+    rsync -av --delete ~/Pictures/Photos /Volumes/NTFS
+    rsync -av --delete ~/Pictures/Lightroom /Volumes/Photos
 }
 
 # Git completion
