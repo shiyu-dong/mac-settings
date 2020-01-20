@@ -1,5 +1,5 @@
 export CLICOLOR=1
-export WORK=$HOME/Google\ Drive/Workspace
+export WORK=$HOME/Dropbox/workspace
 export WORK2=$HOME/Workspace
 export EDITOR=vim
 alias vi='vim'
@@ -25,9 +25,10 @@ cdw() {
 }
 
 backup_photos() {
-    rsync -av --delete ~/Pictures/Photos /Volumes/Photos
     rsync -av --delete ~/Pictures/Photos /Volumes/NTFS
-    rsync -av --delete ~/Pictures/Lightroom /Volumes/Photos
+    rsync -av --delete ~/Pictures/Photos /Volumes/Photos
+    rsync -av --delete ~/Pictures/Lightroom/Lightroom\ Catalog-2.lrcat /Volumes/NTFS/Photos
+    rsync -av --delete ~/Pictures/Lightroom/Lightroom\ Catalog-2.lrcat /Volumes/Photos
 }
 
 # Git completion
