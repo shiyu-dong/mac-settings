@@ -25,10 +25,14 @@ cdw() {
 }
 
 backup_photos() {
-    rsync -av --delete ~/Pictures/Photos /Volumes/NTFS
-    rsync -av --delete ~/Pictures/Photos /Volumes/Photos
-    rsync -av --delete ~/Pictures/Lightroom/Lightroom\ Catalog-2.lrcat /Volumes/NTFS/Photos
-    rsync -av --delete ~/Pictures/Lightroom/Lightroom\ Catalog-2.lrcat /Volumes/Photos
+    if [ -d "/Volumes/NTFS" ]; then
+        rsync -av --delete ~/Pictures/Photos /Volumes/NTFS
+        rsync -av --delete ~/Pictures/Lightroom/Lightroom\ Catalog.lrcat /Volumes/NTFS/Lightroom
+    fi
+    if [ -d "/Volumes/Photos" ]; then
+        rsync -av --delete ~/Pictures/Photos /Volumes/Photos
+        rsync -av --delete ~/Pictures/Lightroom/Lightroom\ Catalog.lrcat /Volumes/Photos/Lightroom
+    fi
 }
 
 # Git completion
