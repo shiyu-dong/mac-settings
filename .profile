@@ -26,11 +26,11 @@ cdw() {
 
 backup_photos() {
     if [ -d "/Volumes/NTFS" ]; then
-        rsync -av --delete ~/Pictures/Photos /Volumes/NTFS
+        rsync -av --delete ~/Pictures/Photos/Mac /Volumes/NTFS/Photos
         rsync -av --delete ~/Pictures/Lightroom/Lightroom\ Catalog.lrcat /Volumes/NTFS/Lightroom
     fi
     if [ -d "/Volumes/Photos" ]; then
-        rsync -av --delete ~/Pictures/Photos /Volumes/Photos
+        rsync -av --delete ~/Pictures/Photos/Mac /Volumes/Photos/Photos
         rsync -av --delete ~/Pictures/Lightroom/Lightroom\ Catalog.lrcat /Volumes/Photos/Lightroom
     fi
 }
