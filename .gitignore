@@ -6,6 +6,7 @@
 .arcrc
 .atom/
 .aw/
+.aws/
 .bashrc
 .bash_history
 .bash_profile
@@ -42,6 +43,7 @@
 .jpf/
 .jupyter/
 .keras/
+.kube/
 .lesshst
 .m2/
 .macports/
@@ -80,6 +82,7 @@
 .vim/bundle/
 .vscode/
 .wget-hsts
+.yarnrc
 .zshenv
 
 ## Normal files and folders
@@ -100,6 +103,7 @@ Public/
 Workspace/
 Uber/
 bin/
+gocode/
 go-code/
 learning/
 ucd*
