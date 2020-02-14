@@ -19,7 +19,7 @@ Plugin 'vim-scripts/indentpython.vim'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
@@ -137,16 +137,16 @@ syntax on
 
 " ================ color scheme ======================
 set background=dark
-if has('gui_running')
-  colorscheme solarized
-  set guifont=Menlo:h14
-  set lines=72 columns=240
-  set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-else
-  colorscheme solarized
-  set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-endif
-call togglebg#map("<F5>")
+"if has('gui_running')
+"  colorscheme solarized
+"  set guifont=Menlo:h14
+"  set lines=72 columns=240
+"  set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+"else
+"  colorscheme solarized
+"  set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+"endif
+"call togglebg#map("<F5>")
 
 " Python indention
 au BufNewFile,BufRead *.py
