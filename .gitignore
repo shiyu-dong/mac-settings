@@ -11,6 +11,8 @@
 .bash_history
 .bash_profile
 .bash_sessions/
+.bazelcache/
+.boto
 .boxer/
 .buckw/
 .bundle/
@@ -48,6 +50,9 @@
 .m2/
 .macports/
 .matplotlib/
+.netrc
+.netrc_info
+.netrwhist
 .netrwhist
 .node-gyp/
 .npm/
@@ -104,6 +109,7 @@ Workspace/
 Uber/
 bin/
 gocode/
+google-cloud-sdk/
 go-code/
 learning/
 ucd*
