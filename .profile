@@ -50,3 +50,5 @@ myName=`/usr/libexec/PlistBuddy -c "Print :System:System:ComputerName" /Library/
 PS1='\[\e[36m\]\u\[\e[0m\]@\[\e[35m\]\h\[\e[0m\]:\[\e[34m\]\w\[\e[0m\]$(__git_ps1 "[\[\e[33m\]%s\[\e[0m\]]")`if [ \$? = 0 ]; then echo $; else echo \[\e[31m\]%\[\e[0m\];fi;` '
 PS2="Continue> "
 
+# disable bash deprecation warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
