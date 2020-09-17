@@ -24,14 +24,6 @@ cdw() {
     fi
 }
 
-backup_photos() {
-    # sync from Mac to backup
-    if [ -d "/Volumes/Photos" ]; then
-        rsync -av --delete ~/Pictures/Photos/Mac /Volumes/Photos/Photos
-        rsync -av --delete ~/Pictures/Lightroom/Lightroom\ Catalog.lrcat /Volumes/Photos/Lightroom
-    fi
-}
-
 # Git completion
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
