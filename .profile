@@ -39,7 +39,3 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # homebrew path
 export PATH=/opt/homebrew/bin:$PATH
 
-# use python3 by default
-alias python=python3
-alias pip=pip3
-
