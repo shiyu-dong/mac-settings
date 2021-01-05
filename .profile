@@ -35,3 +35,7 @@ PS2="Continue> "
 
 # disable bash deprecation warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# homebrew path
+export PATH=/opt/homebrew/bin:$PATH
+
