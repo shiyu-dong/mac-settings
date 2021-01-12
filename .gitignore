@@ -1,5 +1,6 @@
 ## hidden files
 .CFUserTextEncoding
+.DS_Store
 .Trash/
 .Xauthority
 .android/
@@ -23,6 +24,7 @@
 .config/
 .cocoapods/
 .cups/
+.databricks/
 .devxp/
 .dep-cache/
 .docker/
@@ -88,6 +90,7 @@
 .vim/bundle/
 .vscode/
 .wget-hsts
+.xcode_xip_temp/
 .yarnrc
 .zshenv
 
@@ -114,3 +117,4 @@ google-cloud-sdk/
 go-code/
 learning/
 ucd*
+universe/

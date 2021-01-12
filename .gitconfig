@@ -1,22 +1,10 @@
 [user]
 	name = Shiyu Dong
-	email = shiyu@uber.com
+	email = shiyu.dong@databricks.com
 [branch]
 	autosetuprebase = always
 [rerere]
 	enabled = true
-[url "ssh://gitolite@code.uber.internal/"]
-	insteadOf = git://code.uber.internal/
-[url "ssh://code.uber.internal/"]
-	insteadOf = https://code.uber.internal/
-[url "ssh://config.uber.internal/"]
-	insteadOf = https://config.uber.internal/
-[url "ssh://git@github.com/uber/"]
-	insteadOf = https://github.com/uber/
-[http "https://gopkg.uberinternal.com"]
-	followRedirects = true
-[http "https://gopkg.in"]
-	followRedirects = true
 [format]
   numbered = auto
 [color]
@@ -71,7 +59,3 @@
   st  = status
   l   = log --graph --all
   h   = log --graph --oneline --all --decorate
-[credential "https://git.uberinternal.com"]
-	helper = usso
-[credential "https://vfs4g-cache.uberinternal.com"]
-	helper = usso
