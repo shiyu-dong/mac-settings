@@ -39,3 +39,5 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # homebrew path
 export PATH=/opt/homebrew/bin:$PATH
 
+# bash history format
+export HISTTIMEFORMAT="%d/%m/%y %T "
